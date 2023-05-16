@@ -4,7 +4,7 @@ const menu = [
         title: "buttermilk pancakes",
         category: "breakfast",
         price: 15.98,
-        img: "./images/item-1.jpeg",
+        img: "./image/item-1.jpeg",
         desc: `best of milk shake prepared by the
         best chefs. constisting of original milk and local eggs
         its the best you can have in town very fresh!`,
@@ -14,7 +14,7 @@ const menu = [
         title: "double dinner",
         category: "lunch",
         price: 19.98,
-        img: "./images/item-2.jpeg",
+        img: "./image/item-2.jpeg",
         desc: `best of milk shake prepared by the
         best chefs. constisting of original milk and local eggs
         its the best you can have in town very fresh!`,
@@ -24,7 +24,7 @@ const menu = [
         title: "bGodzilla MilkShake",
         category: "breakfast",
         price: 11.98,
-        img: "./images/item-3.jpeg",
+        img: "./image/item-3.jpeg",
         desc: `best of milk shake prepared by the
         best chefs. constisting of original milk and local eggs
         its the best you can have in town very fresh!`,
@@ -34,7 +34,7 @@ const menu = [
         title: "country delight",
         category: "dinner",
         price: 9.98,
-        img: "./images/item-4.jpeg",
+        img: "./image/item-4.jpeg",
         desc: `best of milk shake prepared by the
         best chefs. constisting of original milk and local eggs
         its the best you can have in town very fresh!`,
@@ -44,7 +44,7 @@ const menu = [
         title: "Egg Attack",
         category: "lunch",
         price: 20.98,
-        img: "./images/item-5.jpeg",
+        img: "./image/item-5.jpeg",
         desc: `best of milk shake prepared by the
         best chefs. constisting of original milk and local eggs
         its the best you can have in town very fresh!`,
@@ -54,7 +54,7 @@ const menu = [
         title: "oreo dream",
         category: "dinner",
         price: 10.98,
-        img: "./images/item-6.jpeg",
+        img: "./image/item-6.jpeg",
         desc: `best of milk shake prepared by the
         best chefs. constisting of original milk and local eggs
         its the best you can have in town very fresh!`,
@@ -64,7 +64,7 @@ const menu = [
         title: "becon overflow",
         category: "lunch",
         price: 19.98,
-        img: "./images/item-7.jpeg",
+        img: "./image/item-7.jpeg",
         desc: `best of milk shake prepared by the
         best chefs. constisting of original milk and local eggs
         its the best you can have in town very fresh!`,
@@ -74,7 +74,7 @@ const menu = [
         title: "American classic",
         category: "breakfast",
         price: 12.98,
-        img: "./images/item-8.jpeg",
+        img: "./image/item-8.jpeg",
         desc: `best of milk shake prepared by the
         best chefs. constisting of original milk and local eggs
         its the best you can have in town very fresh!`,
@@ -84,7 +84,7 @@ const menu = [
         title: "Quarantine buddy ",
         category: "shakes",
         price: 8.08,
-        img: "./images/item-9.jpeg",
+        img: "./image/item-9.jpeg",
         desc: `best of milk shake prepared by the
         best chefs. constisting of original milk and local eggs
         its the best you can have in town very fresh!`,
@@ -94,7 +94,7 @@ const menu = [
         title: "American shakes",
         category: "shakes",
         price: 22.98,
-        img: "./images/item-10.jpeg",
+        img: "./image/item-10.jpeg",
         desc: `best of milk shake prepared by the
         best chefs. constisting of original milk and local eggs
         its the best you can have in town very fresh!`,
@@ -107,7 +107,7 @@ const sectionCenter = document.querySelector('.section-center');
 //load items
 window.addEventListener("DOMContentLoaded", function (){
  displayMenuItems(menu);
- //adding buttons
+ 
  const container = this.document.querySelector('.btn-container')
  const categories = menu.reduce(function(values, item){
     if(!values.includes(item.category)){
@@ -121,9 +121,13 @@ window.addEventListener("DOMContentLoaded", function (){
     return ` <button class="filter-btn" type="button"
      data-id=${category}>${category}</button>`
  }).join("");
+ //adding buttons
  container.innerHTML = categoryBtns
+
+ 
  const filterBtns = document.querySelectorAll
  ('.filter-btn')
+ //filter items
  filterBtns.forEach(function(btn){
     btn.addEventListener('click', function(e){
     const category = e.currentTarget.dataset.id;
